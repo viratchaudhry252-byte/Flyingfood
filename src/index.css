@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #ff4e00;
+  --color-base: #0a0502;
+  --color-text: #e0d8d0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: initial;
+    background: #0a0502;
+    color: #e0d8d0;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+:root {
+  perspective: 1000px;
+}
