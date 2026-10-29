@@ -34,7 +34,7 @@ export function ShoppingCart() {
                     <p className="text-zinc-600 text-[10px] font-bold uppercase tracking-widest">3 Items — Seasonal Ready</p>
                   </div>
                 </div>
-                <button onClick={() => setIsOpen(false)} className="p-2 hover:bg-white/5 rounded-full transition-colors opacity-50 hover:opacity-100">
+                <button aria-label="Close cart" onClick={() => setIsOpen(false)} className="p-2 hover:bg-white/5 rounded-full transition-colors opacity-50 hover:opacity-100">
                   <X size={24} />
                 </button>
               </div>
@@ -59,9 +59,9 @@ export function ShoppingCart() {
                       <div className="flex items-center justify-between">
                         <span className="text-[#ff4e00] font-bold text-sm">$24.00</span>
                         <div className="flex items-center gap-3">
-                          <button className="w-5 h-5 rounded-full border border-white/10 flex items-center justify-center text-[10px] hover:bg-white/10 transition-colors">-</button>
+                          <button aria-label="Decrease quantity" className="w-5 h-5 rounded-full border border-white/10 flex items-center justify-center text-[10px] hover:bg-white/10 transition-colors">-</button>
                           <span className="text-[10px] font-bold">1</span>
-                          <button className="w-5 h-5 rounded-full border border-white/10 flex items-center justify-center text-[10px] hover:bg-white/10 transition-colors">+</button>
+                          <button aria-label="Increase quantity" className="w-5 h-5 rounded-full border border-white/10 flex items-center justify-center text-[10px] hover:bg-white/10 transition-colors">+</button>
                         </div>
                       </div>
                     </div>
@@ -88,6 +88,7 @@ export function ShoppingCart() {
       </AnimatePresence>
 
       <motion.button
+        aria-label="Open cart"
         onClick={() => setIsOpen(true)}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}

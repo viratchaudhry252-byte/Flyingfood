@@ -15,8 +15,12 @@ export function Footer() {
               A high-definition culinary movement. Mastering the art of the stack, the sear, and the digital savor.
             </p>
             <div className="flex gap-4">
-              {[Instagram, Twitter, Facebook].map((Icon, i) => (
-                <button key={i} className="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center text-zinc-600 hover:text-[#ff4e00] hover:border-[#ff4e00] transition-all">
+              {[
+                { Icon: Instagram, label: "Instagram" },
+                { Icon: Twitter, label: "Twitter" },
+                { Icon: Facebook, label: "Facebook" }
+              ].map(({ Icon, label }, i) => (
+                <button key={i} aria-label={label} className="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center text-zinc-600 hover:text-[#ff4e00] hover:border-[#ff4e00] transition-all">
                   <Icon size={16} />
                 </button>
               ))}
@@ -61,9 +65,10 @@ export function Footer() {
               <input 
                 type="email" 
                 placeholder="Email Address" 
+                aria-label="Email Address"
                 className="w-full bg-white/5 border border-white/10 rounded-full py-4 px-6 text-[10px] font-bold tracking-widest placeholder:text-zinc-800 focus:outline-none focus:border-[#ff4e00] transition-all"
               />
-              <button className="absolute right-2 top-2 bottom-2 bg-[#e0d8d0] text-black px-4 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-[#ff4e00] hover:text-white transition-all">
+              <button aria-label="Join newsletter" className="absolute right-2 top-2 bottom-2 bg-[#e0d8d0] text-black px-4 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-[#ff4e00] hover:text-white transition-all">
                 Join
               </button>
             </div>
