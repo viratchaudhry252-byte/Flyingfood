@@ -32,14 +32,14 @@ export function Navbar() {
       </div>
 
       <div className="flex items-center gap-6">
-        <button className="p-2 opacity-50 hover:opacity-100 transition-opacity">
+        <button aria-label="Search" className="p-2 opacity-50 hover:opacity-100 transition-opacity focus-visible:ring-2 focus-visible:ring-[#ff4e00] focus-visible:outline-none rounded">
           <Search size={18} />
         </button>
-        <button className="flex items-center gap-2 group transition-all">
+        <button className="flex items-center gap-2 group transition-all focus-visible:ring-2 focus-visible:ring-[#ff4e00] focus-visible:outline-none rounded px-2 py-1">
           <ShoppingBag size={18} className="text-[#ff4e00]" />
           <span className="text-[11px] font-bold uppercase tracking-widest opacity-70 group-hover:opacity-100">Cart (3)</span>
         </button>
-        <button className="md:hidden p-2">
+        <button aria-label="Toggle menu" className="md:hidden p-2 focus-visible:ring-2 focus-visible:ring-[#ff4e00] focus-visible:outline-none rounded">
           <Menu size={24} />
         </button>
       </div>

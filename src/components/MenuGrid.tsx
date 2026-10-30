@@ -65,7 +65,7 @@ const MENU_ITEMS = [
   }
 ];
 
-function Card({ item }: { item: typeof MENU_ITEMS[0] }) {
+function Card({ item, key }: { item: typeof MENU_ITEMS[0], key?: React.Key }) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -148,7 +148,7 @@ function Card({ item }: { item: typeof MENU_ITEMS[0] }) {
             <p className="text-zinc-600 text-[9px] uppercase font-bold tracking-[0.2em] mb-1">Price</p>
             <p className="text-2xl font-light italic text-[#e0d8d0]">{item.price}</p>
           </div>
-          <button className="h-10 w-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-[#ff4e00] hover:text-white transition-all active:scale-95 shadow-xl shadow-black/40">
+          <button aria-label={`Add ${item.name} to cart`} className="h-10 w-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-[#ff4e00] hover:text-white transition-all active:scale-95 shadow-xl shadow-black/40 focus-visible:ring-2 focus-visible:ring-[#ff4e00] focus-visible:outline-none focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900">
             <ShoppingCart size={18} />
           </button>
         </div>
@@ -174,7 +174,7 @@ export function MenuGrid() {
               The Tasting <br /><span className="text-white not-italic underline decoration-[#ff4e00] decoration-4 underline-offset-8">Selections</span>
             </h2>
           </div>
-          <button className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#e0d8d0] opacity-50 hover:opacity-100 transition-opacity group">
+          <button className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#e0d8d0] opacity-50 hover:opacity-100 transition-opacity group focus-visible:ring-2 focus-visible:ring-[#ff4e00] focus-visible:outline-none focus-visible:opacity-100 rounded px-2 py-1">
             Full Inventory <MoveRight className="group-hover:translate-x-2 transition-transform" />
           </button>
         </div>
