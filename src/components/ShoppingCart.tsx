@@ -18,6 +18,9 @@ export function ShoppingCart() {
               className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60]"
             />
             <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-label="Shopping Cart"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
@@ -34,7 +37,7 @@ export function ShoppingCart() {
                     <p className="text-zinc-600 text-[10px] font-bold uppercase tracking-widest">3 Items — Seasonal Ready</p>
                   </div>
                 </div>
-                <button onClick={() => setIsOpen(false)} className="p-2 hover:bg-white/5 rounded-full transition-colors opacity-50 hover:opacity-100">
+                <button aria-label="Close cart" onClick={() => setIsOpen(false)} className="p-2 hover:bg-white/5 rounded-full transition-colors opacity-50 hover:opacity-100 focus-visible:ring-2 focus-visible:ring-[#ff4e00] focus-visible:outline-none focus-visible:opacity-100">
                   <X size={24} />
                 </button>
               </div>
@@ -59,9 +62,9 @@ export function ShoppingCart() {
                       <div className="flex items-center justify-between">
                         <span className="text-[#ff4e00] font-bold text-sm">$24.00</span>
                         <div className="flex items-center gap-3">
-                          <button className="w-5 h-5 rounded-full border border-white/10 flex items-center justify-center text-[10px] hover:bg-white/10 transition-colors">-</button>
+                          <button aria-label="Decrease quantity" className="w-5 h-5 rounded-full border border-white/10 flex items-center justify-center text-[10px] hover:bg-white/10 transition-colors focus-visible:ring-2 focus-visible:ring-[#ff4e00] focus-visible:outline-none">-</button>
                           <span className="text-[10px] font-bold">1</span>
-                          <button className="w-5 h-5 rounded-full border border-white/10 flex items-center justify-center text-[10px] hover:bg-white/10 transition-colors">+</button>
+                          <button aria-label="Increase quantity" className="w-5 h-5 rounded-full border border-white/10 flex items-center justify-center text-[10px] hover:bg-white/10 transition-colors focus-visible:ring-2 focus-visible:ring-[#ff4e00] focus-visible:outline-none">+</button>
                         </div>
                       </div>
                     </div>
@@ -88,11 +91,12 @@ export function ShoppingCart() {
       </AnimatePresence>
 
       <motion.button
+        aria-label="Open cart"
         onClick={() => setIsOpen(true)}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ type: 'spring', delay: 1 }}
-        className="fixed bottom-8 right-8 w-16 h-16 bg-[#ff4e00] text-white rounded-full flex items-center justify-center shadow-2xl shadow-[#ff4e00]/20 z-50 hover:scale-110 active:scale-95 transition-transform group"
+        className="fixed bottom-8 right-8 w-16 h-16 bg-[#ff4e00] text-white rounded-full flex items-center justify-center shadow-2xl shadow-[#ff4e00]/20 z-50 hover:scale-110 active:scale-95 transition-transform group focus-visible:ring-4 focus-visible:ring-white focus-visible:outline-none"
       >
         <ShoppingBag size={24} />
         <span className="absolute -top-1 -right-1 w-6 h-6 bg-[#e0d8d0] text-black text-[10px] font-black rounded-full flex items-center justify-center border-2 border-[#ff4e00]">3</span>
