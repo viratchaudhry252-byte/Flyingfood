@@ -65,7 +65,7 @@ const MENU_ITEMS = [
   }
 ];
 
-function Card({ item }: { item: typeof MENU_ITEMS[0] }) {
+function Card({ item }: { item: typeof MENU_ITEMS[0]; key?: React.Key }) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
