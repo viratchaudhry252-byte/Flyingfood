@@ -1,0 +1,3 @@
+## 2024-10-31 - Missing Aria-labels and Focus States
+**Learning:** The application's component library has a historical pattern of missing `aria-label` attributes on icon-only buttons (e.g., Search, Menu, Social Links) and missing `focus-visible` keyboard focus states.
+**Action:** Future UX work should proactively verify and add `aria-label` to all icon-only interactive elements and implement clear `focus-visible` outlines (using `focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4e00]`) to ensure keyboard accessibility.
