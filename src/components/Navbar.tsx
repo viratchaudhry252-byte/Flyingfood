@@ -23,7 +23,7 @@ export function Navbar() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="text-[11px] uppercase tracking-[0.2em] font-semibold opacity-70 hover:opacity-100 hover:text-[#ff4e00] transition-all"
+              className="text-[11px] uppercase tracking-[0.2em] font-semibold opacity-70 hover:opacity-100 hover:text-[#ff4e00] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4e00] rounded-sm"
             >
               {item}
             </motion.a>
@@ -32,14 +32,14 @@ export function Navbar() {
       </div>
 
       <div className="flex items-center gap-6">
-        <button className="p-2 opacity-50 hover:opacity-100 transition-opacity">
+        <button aria-label="Search" className="p-2 opacity-50 hover:opacity-100 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4e00] rounded-sm">
           <Search size={18} />
         </button>
-        <button className="flex items-center gap-2 group transition-all">
+        <button className="flex items-center gap-2 group transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4e00] rounded-sm">
           <ShoppingBag size={18} className="text-[#ff4e00]" />
           <span className="text-[11px] font-bold uppercase tracking-widest opacity-70 group-hover:opacity-100">Cart (3)</span>
         </button>
-        <button className="md:hidden p-2">
+        <button aria-label="Menu" className="md:hidden p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4e00] rounded-sm">
           <Menu size={24} />
         </button>
       </div>
