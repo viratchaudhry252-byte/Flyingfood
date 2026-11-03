@@ -65,7 +65,7 @@ const MENU_ITEMS = [
   }
 ];
 
-function Card({ item }: { item: typeof MENU_ITEMS[0] }) {
+function Card({ item }: { key?: number, item: typeof MENU_ITEMS[0] }) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
