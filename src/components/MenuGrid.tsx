@@ -148,7 +148,10 @@ function Card({ item }: { item: typeof MENU_ITEMS[0] }) {
             <p className="text-zinc-600 text-[9px] uppercase font-bold tracking-[0.2em] mb-1">Price</p>
             <p className="text-2xl font-light italic text-[#e0d8d0]">{item.price}</p>
           </div>
-          <button className="h-10 w-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-[#ff4e00] hover:text-white transition-all active:scale-95 shadow-xl shadow-black/40">
+          <button
+            aria-label={`Add ${item.name} to cart`}
+            className="h-10 w-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-[#ff4e00] hover:text-white transition-all active:scale-95 shadow-xl shadow-black/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4e00] focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900"
+          >
             <ShoppingCart size={18} />
           </button>
         </div>
@@ -181,7 +184,9 @@ export function MenuGrid() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {MENU_ITEMS.map((item) => (
-            <Card key={item.id} item={item} />
+            <React.Fragment key={item.id}>
+              <Card item={item} />
+            </React.Fragment>
           ))}
         </div>
       </div>

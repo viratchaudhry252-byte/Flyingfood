@@ -15,8 +15,16 @@ export function Footer() {
               A high-definition culinary movement. Mastering the art of the stack, the sear, and the digital savor.
             </p>
             <div className="flex gap-4">
-              {[Instagram, Twitter, Facebook].map((Icon, i) => (
-                <button key={i} className="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center text-zinc-600 hover:text-[#ff4e00] hover:border-[#ff4e00] transition-all">
+              {[
+                { Icon: Instagram, label: 'Instagram' },
+                { Icon: Twitter, label: 'Twitter' },
+                { Icon: Facebook, label: 'Facebook' }
+              ].map(({ Icon, label }, i) => (
+                <button
+                  key={i}
+                  aria-label={label}
+                  className="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center text-zinc-600 hover:text-[#ff4e00] hover:border-[#ff4e00] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4e00] focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
+                >
                   <Icon size={16} />
                 </button>
               ))}

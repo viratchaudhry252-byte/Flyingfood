@@ -24,7 +24,7 @@ export function CategoryNav() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className={`flex items-center gap-3 px-4 py-2 rounded-full transition-all group ${
+              className={`flex items-center gap-3 px-4 py-2 rounded-full transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4e00] focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
                 cat.active ? 'bg-[#ff4e00] text-white shadow-lg shadow-[#ff4e00]/20' : 'text-zinc-500 hover:text-white hover:bg-white/5'
               }`}
             >
